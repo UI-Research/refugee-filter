@@ -1,0 +1,7 @@
+	-add new xlsx to correct directory containing reshape.py
+	-rename xlsx file to something without spaces
+	-save xlsx as a csv
+	-`mkvirtualenv NAME` if one doesn't exist
+	-`workon NAME` to enter that virtual environment
+	-install python dependencies to this space (pandas, xlrd, etc.)
+	-
