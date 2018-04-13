@@ -1,0 +1,412 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+// @import "compass/reset";
+@import "variables";
+@import "uijquery";
+@import "urban-header";
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+  background-color: #f7f7f7;
+}
+
+// header
+.intro-wrap {
+    height: auto;
+    z-index: 20000;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    font-style: italic;
+}
+
+.banner-wrapper {
+  width: 100%;
+}
+#intro-text {
+  background-color: #fff;
+  padding: 42px;
+  padding-bottom: 85px;
+}
+
+.banner {
+  background-color: #fff;
+  width: 100%;
+  height: auto;
+  margin-top: 52px;
+}
+
+/*Typography*/
+
+h1 {
+  font-size: 36px;
+  color: #000;
+  letter-spacing: .5px;
+  font-style: normal !important;
+}
+h2 {
+  font-size: 18px;
+  color: #353535;
+  font-weight: 300;
+}
+
+#date {
+  font-style: normal;
+  font-size: 14px;
+  color: #353535;
+}
+
+
+a {
+    text-decoration: none;
+    color: #1696d2;
+    cursor: pointer;
+}
+a:hover {
+  color: #000;
+}
+
+/*dropdown*/
+#drop-list {
+  width:100%;
+  background-color: #fff;
+  
+  #drop-list-inner {
+    width:100%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    .dropbtn {
+      color: #000;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      font-family: Lato;
+      font-weight: 700;
+      border-right: 1px solid #D2D2D2;
+      margin: 16px;
+      margin-right: 0px;
+      padding-right: 16px;
+      padding-left: 0px;
+
+      .arrow {
+        background-image: url(../../images/arrow_down.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 15px;
+        height: 8px;
+        // float: left;
+        display: inline-block;
+        margin-left:10px;
+        margin-bottom: 3px;
+        margin-right: 10px;
+      }
+
+      .arrow:hover {
+        background-image: url(../../images/arrow_blue_down.png);
+      }
+
+      .arrow.active {
+        background-image: url(../../images/arrow_blue_up.png);
+      }
+
+
+    }
+
+    .dropbtn.last {
+      border: none !important;      
+    }
+
+    .dropbtn:hover, .dropbtn:focus {
+      color: $cerulean;
+    }
+
+    .dropbtn:focus {
+      outline: none !important;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown a:hover {background-color: #ddd}
+
+    .show {display:block;}
+
+
+  }
+}  
+
+// body
+
+.spacer {
+  height: 200px;
+  width: 100%;
+}
+
+/*Footer*/
+.footerButton {
+    height: 20;
+    float: left;
+    width: 115px;
+    border: 1px solid #333;
+    cursor: pointer;
+    font: 13px Lato;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none !important;
+    color: #333 !important;
+    margin: 14px 0;
+    line-height: 20px;
+    margin-right: 15px;
+}
+
+.appendixButton {
+  margin-right: 0px;
+}
+
+.footerButton:hover {
+  background-color: #000;
+  color: #fff !important;
+}
+
+.credit-list {
+    font-size: 14px;
+}
+.credit-header {
+  font-size: 16px;
+  font-weight: bold !important;
+}
+.credit-names{
+    margin-bottom: 20px;
+    margin-top: 5px;
+    font-size: 16px;
+}
+.credits-text.bottom-text{
+  font-size: 14px;
+    margin-bottom: 45px;
+
+   line-height: 22px !important;
+}
+.bottom-text {
+  clear: both;
+  font-size: 16px;
+  color: #231f20;
+  line-height: 26px;
+}
+h1.bottom-header{
+  font-size: 34px;
+  color: #000;
+  margin-top: 50px;
+  margin-bottom: 8px;
+}
+#copyright{
+    margin-bottom: 100px;
+    display: inline-block;
+    font-style: italic;
+}
+
+.bottom-section {
+
+}
+.bottom-container {
+  background-color: #ececec;
+  border-top: 1px solid rgb(173, 171, 172);
+}
+
+.bottom-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 44px;
+}
+
+.description {
+  opacity: 0.5;
+  font-family: Lato;
+  font-size: 14px;
+  text-align: left;
+  color: #000000;
+}
+
+#isMobile {
+  display: none;
+}
+#isPhone{
+  display: none;
+}
+#isPhoneSm {
+  display: none;
+}
+
+
+
+@media (min-width : 1201px) {
+
+}
+
+@media (max-width: 1100px) {
+
+}
+
+@media (max-width: 930px) {
+
+}
+
+@media screen and (max-width: 900px) {
+  .intro-wrap {
+    width: 100%;
+  }  
+  #isMobile {
+    display: block;
+  }  
+}
+
+@media (max-width: 800px){
+  
+}
+
+@media screen and (max-width: 700px) {
+
+  .bottom-container {
+    float: left;
+  }
+  .bottom-content {
+    width: calc(100% - 100px)
+  }
+  #isPhone {
+    display: block;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  * {
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; 
+      -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
+      outline: none !important;
+  } 
+}
+
+@media screen and (max-width: 550px) {
+  #isPhoneSm {
+    display: block;
+  }
+  .intro-wrap {
+    width: 100%;
+  }
+  #intro-text{
+    padding: 30px 15px;
+    padding-bottom: 45px;
+  }
+
+}
+
+@media screen and (max-width: 387px) {
+  .appendixButton {
+    margin-top: 0px;
+  }
+}
+
+@media print{
+  @page {
+    size: portrait !important;
+  }
+
+  h1 {
+    color: #000;
+  }
+  h2 {
+    color: #000;
+  }
+  #date {
+    color: #000;
+  }
+/*  .banner-wrapper {
+    display: none;
+  }*/
+  .title {
+    display: none;
+  }
+  .search-div-main {
+    display: none;
+  }
+  .left-table table tbody tr:last-child td {
+    padding-bottom: 3px;
+  }
+  .left-table table th {
+    padding: 2px 1px 0px 10px;
+  }
+  .bottom-content {
+    padding-top: 150px;
+  }
+  .group.selected, .group.selected td {
+    color: #000;
+  }
+  #legend-div {
+    height: 20px;
+  }
+  .map-div {
+    margin-left: 10px;
+  }
+  h1.bottom-header {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  .bottom-text {
+    font-size: 13px;
+  }
+  .credit-header, .credit-names {
+    font-size: 13px;
+  }
+  .bottom-text, .credits-text {
+    line-height: 18px;
+  }
+  .credit-names {
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+ .bottom-content {
+  max-width: 850px;
+ }
+ .counties {
+  stroke-width: 0px;
+ }
+path.hide {
+  fill: none !important;
+  opacity: 0 !important;
+  stroke-width: 1px !important;
+}
+ #map {
+  margin-bottom: 5px;
+ }
+ .bottom-container {
+  border: none;
+ }
+ #copyright {
+  margin-bottom: 0px;
+ }
+}

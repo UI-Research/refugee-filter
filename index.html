@@ -6,16 +6,17 @@
    <meta name="description" content="">
    <link rel="shortcut icon" href="img/favicon.ico" type="img/x-icon">
    <title></title>
-   <link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
-   <link rel="stylesheet" type="text/css" href="css/style.css"/>
    
 
-   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" type="text/css" href="css/urban-header.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic,900" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
-  <link href="css/jquery.tagit.css" rel="stylesheet" type="text/css">
+  
+  <!-- <link href="css/jquery.tagit.css" rel="stylesheet" type="text/css"> -->
 
+  <link href="/stylesheets/css/main.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/css/print.css" media="print" rel="stylesheet" type="text/css" />
+  <!--[if IE]>
+      <link href="/stylesheets/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <![endif]-->
 
   <script type="application/ld+json">
   {
@@ -31,9 +32,9 @@
   }
   </script>
 
-  <script src="js/vendor/jquery-2.2.1.min.js"></script>
-  <script src="js/vendor/jquery-ui.min.js"></script>
-  <script src="js/vendor/tag-it.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/lib/jquery-1.11.3.min.js"></script>
+  <script src="js/lib/jquery-ui.min.js"></script>
+  <!-- <script src="js/vendor/tag-it.js" type="text/javascript" charset="utf-8"></script> -->
 
 </head>
 
@@ -82,7 +83,45 @@
         <!-- <div id="date">Last updated April 5, 2018</div> -->
       </div>
     </div>
-  </div>      
+  </div>
+
+  <div id="drop-list">
+    <div id="drop-list-inner"> 
+      <button onclick="myFunction()" class="dropbtn">Dropdown 
+        <span class="arrow"></span>
+      </button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <!-- <div class='list-spacer'></div> -->
+      <!-- change id on this -->
+      <button onclick="myFunction()" class="dropbtn">Dropdown 
+        <span class="arrow"></span>
+      </button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <!-- <div class='list-spacer'></div>       -->
+      <!-- change id on this -->
+      <button onclick="myFunction()" class="dropbtn last">Dropdown 
+        <span class="arrow"></span>
+      </button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>    
+    </div>
+  </div>    
+</div>
+
+<div id="main-container">
+  <div class="spacer">
+  </div>
 </div>
   <!--END HEADER-->
 <div id="isMobile"></div>
@@ -90,7 +129,9 @@
 <div id="isPhoneSm"></div>
 <!--DESKTOP-->
 
-
+<div id="card-container">
+  <div></div>
+</div>
 
 
 
@@ -191,6 +232,9 @@
   </script>
   <!-- END Parse.ly Include: Standard -->
 </body>
+<!-- <script src="js/header.js"></script> -->
+<script src="js/lib/filter.js" type="text/javascript"></script>
+<script src="data/tracker.js"></script>
 <script src="js/header.js"></script>
 <script src="js/main.js"></script>
 
