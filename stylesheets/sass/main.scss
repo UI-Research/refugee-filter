@@ -81,13 +81,14 @@ a:hover {
     margin: 0 auto;
 
     .dropbtn {
+      position: relative;
       color: #000;
       font-size: 18px;
       border: none;
       cursor: pointer;
       font-family: Lato;
       font-weight: 700;
-      border-right: 1px solid #D2D2D2;
+      // border-right: 1px solid #D2D2D2;
       margin: 16px;
       margin-right: 0px;
       padding-right: 16px;
@@ -106,7 +107,7 @@ a:hover {
         margin-right: 10px;
       }
 
-      .arrow:hover {
+      .arrow.hover {
         background-image: url(../../images/arrow_blue_down.png);
       }
 
@@ -137,23 +138,52 @@ a:hover {
     .dropdown-content {
         display: none;
         position: absolute;
-        background-color: #f1f1f1;
+        background-color: #fff;
         min-width: 160px;
         overflow: auto;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.25);
+        -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.25);
+        box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.25);
         z-index: 1;
+        left:0;
+        top:40px;
     }
 
-    .dropdown-content a {
-        color: black;
+    .dropdown-content div.option {
+        color: #000;
         padding: 12px 16px;
         text-decoration: none;
         display: block;
+        font-size: 13px;
+        line-height: 18px;
+        text-align: left;
+        border-bottom: 1px solid #E3E3E3; 
+        margin-right:15px;
+        margin-left:15px;
+
+        &:hover, &.active {
+          color: $cerulean;
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+    }
+
+    div.bar {
+      background-color: #fff;      
+      width: 5px;
+      position: absolute;
+      height: 43px;
+
+      &.active {
+        background-color: $cerulean;
+      }
     }
 
     .dropdown a:hover {background-color: #ddd}
 
-    .show {display:block;}
+    .active {display:block;}
 
 
   }
