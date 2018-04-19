@@ -28,13 +28,26 @@ $(".dropbtn").mouseout(function(){
   $(this).children().removeClass("hover")
 })
 
-$(".dropbtn").click(function(){
+$(document).click(function(){
+	console.log('hello')
+	$('.dropbtn').children().removeClass("active")
+})
+
+$(".dropbtn").click(function(e){	
+	e.stopPropagation();
   $(this).siblings().children().removeClass("active")
   $(this).siblings().children().removeClass("active")
   $(this).children().toggleClass("active")  
 })
 
-$(".option").click(function(){
+$(".option").click(function(e){
+	e.stopPropagation();
   $(this).toggleClass("active")
   $(this).prev().toggleClass("active")
 })
+
+
+
+
+
+

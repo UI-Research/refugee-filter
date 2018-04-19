@@ -44,7 +44,7 @@ body {
 
 h1 {
   font-size: 36px;
-  color: #000;
+  // color: #000;
   letter-spacing: .5px;
   font-style: normal !important;
 }
@@ -191,10 +191,240 @@ a:hover {
 
 // body
 
-.spacer {
-  height: 200px;
-  width: 100%;
+#main-container-inner {
+  padding:10px;
+  // background-color: #dadb0d;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  .card-mini {
+    width: 25%;
+    height: 150px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    // background-color: #5ad5ad;
+    float: left;
+
+    h1 {
+      color: $cerulean;
+    }
+  }
+
+  .card-inner {
+    margin-right: 15px;
+    margin-left: 15px;  
+    padding-top:10px;    
+    height: 100%;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.25);
+
+    .card-inner-mini-text {
+      position: relative;
+      top: 45px;
+      padding-left:15px;
+
+      h1 {
+        font-size: 24px;
+        font-weight: 700;
+        margin: 0;
+        line-height: 29px;
+        color: $cerulean;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        margin: 0;
+        font-size:13px;
+        line-height:16px;
+        font-weight: 300;
+      }
+    }
+
+    &.mini.active, &.mini:hover {
+      background-color: $cerulean;
+      color: #ffffff !important;
+      cursor: pointer;  
+      h1 {
+       color: #ffffff !important; 
+      }
+    }
+  }
+
+  .card-large {
+    width: 100%;
+    height: 516px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    // background-color: #cadcad;
+    float: left;
+    
+    .card-inner {
+      position:relative;
+
+      .exex {
+        position:absolute;
+        right:16px;
+        top:16px;
+        width:23px;
+        height:22px;
+        background-image: url(../../images/exex.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+
+      .card-inner-large-text {  
+        margin-top:110px;
+        margin-left:70px;
+        margin-right:70px;
+
+        .map {
+          float: left;
+          width: $FullMapSize;
+
+          .map-text {
+            border-top: 1px solid #D2D2D2;
+            color: #696969;
+            font-size: 14px;
+            line-height: 20px;
+            font-style: italic;
+            text-align: right;
+            margin-left: 40px;
+          }
+        }
+
+        .large-text-container {          
+          float: left;
+          width: calc(100% - #{$FullMapSize});
+
+          .large-text-inner {
+            margin-left: 40px;
+          }
+
+          h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0;
+            line-height: 29px;
+          }
+
+          h3 {
+            text-transform: uppercase;
+            margin: 0;
+            margin-top:10px;
+            font-size:13px;
+            line-height:16px;
+            font-weight: 700;
+          }
+
+          p {
+            font-size: 16px;
+            line-height:23px;
+            color: #000;
+          }
+
+        }
+
+      }
+
+    }
+    
+  }
+
+  .clearer {
+    clear: both;
+  }
+
+  @media (max-width: 1100px) {
+    .card-mini {
+     width:33%; 
+    }
+    .card-large {
+      height: 450px;
+
+      .card-inner .card-inner-large-text {
+        margin-top:60px;        
+        
+        .map {          
+          width: $MediumMapSize;
+        }
+
+        .large-text-container {
+          width: calc(100% - #{$MediumMapSize})
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .card-mini {
+     width:50%; 
+    }
+    .card-large {
+      height: 440px;
+
+      .card-inner .card-inner-large-text {
+        margin-top: 40px;
+        margin-left:25px;
+        margin-right:25px;
+
+        .map {
+          position: absolute;
+          bottom:0px;
+          width:100%;
+
+          .map-text {
+            border-top: none;
+            font-size: 14px;
+            line-height: 20px;
+            font-style: italic;
+            text-align: left;
+            margin-left:40px;
+            margin-bottom:40px;
+            width:100%;
+          }
+
+          img {
+            display:none;
+          }
+        }
+
+        .large-text-container {
+          width: 100%;
+        }
+      } 
+
+    }
+  }
+
+
+  @media (max-width: 499px) {
+    .card-mini {
+     width:100%; 
+    }    
+
+    .card-large .card-inner .card-inner-large-text {
+      margin-top: 20px;
+      margin-left:15px;
+      margin-right:10px;
+
+      .large-text-container .large-text-inner {
+        margin-left:0px;
+      }
+
+      .map .map-text {
+        margin-left:0px;
+        margin-bottom:20px;
+      }
+
+    }
+  }
+
 }
+
+
 
 /*Footer*/
 .footerButton {
@@ -293,7 +523,7 @@ h1.bottom-header{
 
 
 
-@media (min-width : 1201px) {
+@media (min-width: 1201px) {
 
 }
 
