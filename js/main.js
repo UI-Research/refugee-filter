@@ -27,6 +27,15 @@ function detectSize(w) {
   return s;
 }
 
+function cardSort(data) {
+    var sortedArray = data.sort(function (a, b) {
+          if (a.company < b.company) return -1;
+          else if (a.company > b.company) return 1;
+          return 0;
+        });
+    return sortedArray;
+}
+
 function AddRemoveItem(dis,filters) {
 
   // figure out which group was selected from
@@ -59,18 +68,14 @@ function AddRemoveItem(dis,filters) {
 function filterType(data,filtersInner,type) {    
   var newData = [];
 
-  // if none selected, return all
-  // if one or more selected, return any that have any
   if (filtersInner.length == 0) {
     newData = JSON.parse(JSON.stringify(data))
   } else {
-    // for (var j = 0; j < data.length; j++) {
     for (var j = data.length - 1; j >= 0; j--) { 
       if (type == "sector") {
         for (var i = 0; i < filtersInner.length; i++) {
           if (data[j][type] == filtersInner[i]) {
             newData.push(data[j])
-            // data.splice(j,1)
           }
         }
       } 
@@ -80,10 +85,7 @@ function filterType(data,filtersInner,type) {
           for (var i = 0; i < filtersInner.length; i++) {
             if (data[j][type][k] == filtersInner[i]) {
               newData.push(data[j])
-              // console.log(j)
               break dance;              
-              // data.splice(j,1)
-              // don't push twice....
             }
           }  
         }
@@ -93,17 +95,9 @@ function filterType(data,filtersInner,type) {
   return newData;
 }
 
-function filterCards(data,filters,PassFilterSet,AddRemove) {
-  // if (AddRemove == false) {
-  //   var active = "yes";
-  //   var passive = "no"
-  // } else {
-  //   var active = "no"
-  //   var passive = "yes"
-  // }
-
-      // go into first fitler, go through all data
-      // if qualifies for any of the filter objects, add to intersticial
+function filterCards(data,filters) {
+    // go into first fitler, go through all data
+    // if qualifies for any of the filter objects, add to intersticial
 
     // go into second filter, go through intersticial, if qualifies for any of the filter objects, add to new data, return intersticial (2)
     //  go into third filter, go through intersticial, 
@@ -117,54 +111,7 @@ function filterCards(data,filters,PassFilterSet,AddRemove) {
       finalData = filterType(finalData,filters[type],type)
     }
   }
-  console.log(finalData)
-  for (var i = 0; i < finalData.length; i++) {
-    console.log(finalData[i].partners)
-  }
-
-
-    // for each filter type, see which items match them
-    //if no filters within, do all
-    // if one, two or three, do UNION of them all
-      // push any entries that pass muster to the "yes-intersticial"
-    
-    //for next filter pass entries of any of the "yes-intersticial" entries onto yes-intersticial2
-    // same for last filter 
-
-
-    // console.log(type)
-    // console.log(filters)
-  //   if (filters[type].length != 0) {
-  //     for (var i = 0; i < filters[type].length; i++) {
-  //       for (var j = PassFilterSet[active].length - 1; j >= 0; j--) {
-  //         var correctIndex = 0;
-
-  //         // console.log(PassFilterSet)
-  //         // console.log(j)
-  //         // console.log(PassFilterSet[active].length)
-  //         // console.log(PassFilterSet[active])
-
-  //         for (var k = 0; k < PassFilterSet[active][j][type].length; k++) {    
-  //           if (PassFilterSet[active][j][type][k] === filters[type][i]) {              
-  //             correctIndex +=1;
-  //           } 
-  //         }
-
-  //         if (correctIndex != 1 && active == "yes") {
-  //           PassFilterSet[passive].push(PassFilterSet[active][j])
-  //           PassFilterSet[active].splice(j,1)
-  //         } else if (correctIndex != 0 && active == "no") {
-            
-  //           console.log('hello')
-  //           PassFilterSet[passive].push(PassFilterSet[active][j])
-  //           PassFilterSet[active].splice(j,1)
-  //         }    
-  //       }
-  //     }
-  //   }   
-  // }
-
-  // console.log(PassFilterSet)
+  return finalData;
 
 }
 
@@ -231,6 +178,9 @@ $(document).ready(function(){
     $(this).children().toggleClass("active")  
   })
 
+
+/////////////  // on click of options from the dropdown/ ////////////
+
   $(".option").click(function(e){
     e.stopPropagation();
 
@@ -239,25 +189,32 @@ $(document).ready(function(){
     // Add/remove items from filter array
     AddRemoveItem(this,filters)
 
+    var finalData;
+    finalData =filterCards(tracker,filters)
+    console.log(finalData)
 
-    filterCards(tracker,filters,PassFilterSet,$(this).hasClass("active"))
-    // function search cards based on 
-      // filter items
-      // previous group...
+    finalData = cardSort(finalData)
 
-    // if add item
-      // search PassFilterSet=yes items for JUST new search term
-    // if remove item 
-      // search PassFilterSet=no items for ALL search terms
-    
+
     // visibility classes
     $(this).toggleClass("active")
     $(this).prev().toggleClass("active")
+
+    $("#main-container-inner-inner").empty();
+    for (var i = 0; i < finalData.length; i++) {
+      // add all minis to the DOM
+      var mini = '<div class="card-mini"><div class="card-inner mini"><div class="card-inner-mini-text"><h1>' + finalData[i].company +'</h1><h3>' + finalData[i].sector + '</h3></div></div></div>';
+      $("#main-container-inner-inner").append(mini);     
+    }
+
 
     // timer
     var t1 = performance.now();
     console.log("Filtering took " + (t1 - t0) + " milliseconds.")
   })
+
+
+
 
   $(".exex").click(function(e){
     e.stopPropagation();
@@ -269,6 +226,8 @@ $(document).ready(function(){
 
   $(".card-mini").click(function(e){
     e.stopPropagation();
+
+    // some reason this isn't working for newly createed itemss
 
     // if active already do nothing
     // else 
@@ -284,7 +243,15 @@ $(document).ready(function(){
       var row = Math.floor(cardIndex / numCards[screenSize]) + 1;
       var cardspRow = numCards[screenSize];
       var Largeposition = row*cardspRow-1;
-      
+        
+      // create large card 
+      $(".card-large").remove()
+      // get the data from this mini card  that was selected... add it to the large card. 
+      console.log(this)
+      // console.log(finalData)
+      var largey = '<div class="card-large"><div class="card-inner"><div class="exex"></div><div class="card-inner-large-text"><div class="map"><img src="/images/world.png"><div class="map-text"><p>Works with refugees in areas in Africa, Asia, and the Middle East. </p></div></div><div class="large-text-container"><div class="large-text-inner"><h1>Encel Core Onlus</h1><h3>Consulting</h3><p>Nunc et placerat eros, eget vestibulum nisi. Pellentesque habitant morbi tristique senectus et netus et malesuadafames ac turpis egestas. Vivamus id accumsan urna, vitae pharetra mi. Nulla ut placerat magna. Aenean euismod turpisfelis, vel scelerisque est blandit ut. Nullam in lectus mi. Curabitur porta placerat mauris, sed posuere mi aliquam et</p><p><strong>Pellentesque:</strong> in orci vitae ex scelerisque suscipit.</p><p><strong>Started:</strong> 2005</p></div></div></div></div></div>';
+      $("#main-container-inner-inner").append(largey);
+
       // change large card location
       $(".card-large").insertAfter('.card-mini:eq(' + Largeposition +')');
 
