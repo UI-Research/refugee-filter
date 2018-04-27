@@ -140,13 +140,14 @@ a:hover {
         position: absolute;
         background-color: #fff;
         min-width: 160px;
-        overflow: auto;
+        // overflow: auto;
         -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.25);
         -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.25);
         box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.25);
         z-index: 1;
         left:0;
         top:40px;
+        overflow: hidden;
     }
 
     .dropdown-content div.option {
@@ -174,7 +175,9 @@ a:hover {
       background-color: #fff;      
       width: 5px;
       position: absolute;
-      height: 43px;
+      height: 100%;
+
+      // &.
 
       &.active {
         background-color: $cerulean;
@@ -208,6 +211,16 @@ a:hover {
     h1 {
       color: $cerulean;
     }
+
+    &.active .card-inner.mini {
+      background-color: $cerulean;
+      color: #ffffff !important;
+      cursor: pointer;  
+      h1 {
+       color: #ffffff !important; 
+      }
+    }
+
   }
 
   .card-inner {
@@ -229,7 +242,7 @@ a:hover {
         font-size: 24px;
         font-weight: 700;
         margin: 0;
-        line-height: 29px;
+        line-height: 21px;
         color: $cerulean;
       }
 
@@ -237,12 +250,12 @@ a:hover {
         text-transform: uppercase;
         margin: 0;
         font-size:13px;
-        line-height:16px;
+        line-height:25px;
         font-weight: 300;
       }
     }
 
-    &.mini.active, &.mini:hover {
+    &.mini:hover {
       background-color: $cerulean;
       color: #ffffff !important;
       cursor: pointer;  

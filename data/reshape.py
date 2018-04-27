@@ -18,10 +18,10 @@ for i in range(1, len(rows)):
 	entry["description"] = rows[i][1]
 	entry["sector"] = rows[i][2]
 	entry["sector2"] = rows[i][3]
-	entry["region"] = rows[i][4].split(",")
-	entry["region2"] = rows[i][5]
-	entry["partnerships"] = rows[i][6].split(",")
-	entry["partnerships2"] = rows[i][7]
+	entry["regions"] = rows[i][4].split(",")
+	entry["regions2"] = rows[i][5]
+	entry["partners"] = rows[i][6].split(",")
+	entry["partners2"] = rows[i][7]
 	entry["year"] = rows[i][8]
 
 	# print entry
