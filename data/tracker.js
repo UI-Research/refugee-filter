@@ -61,7 +61,7 @@ var tracker = [
     "year": "2016",
     "company": "Adam Opel AG",
     "partners": [
-      "Government Agencies"
+      "Government agencies"
     ]
   },
   {
@@ -78,7 +78,7 @@ var tracker = [
     "partners": [
       "United Nations High Commissioner for Refugees",
       "International non-profits",
-      "Refugee-owned Businesses"
+      "Refugee-owned businesses"
     ]
   },
   {
@@ -93,7 +93,7 @@ var tracker = [
     "year": "2016",
     "company": "Alight Fund",
     "partners": [
-      "Refugee-owned Businesses"
+      "Refugee-owned businesses"
     ]
   },
   {
@@ -108,7 +108,7 @@ var tracker = [
     "year": "2015",
     "company": "Audi",
     "partners": [
-      "Numerous Partners of different types"
+      "Multiple partners"
     ]
   },
   {
@@ -125,7 +125,7 @@ var tracker = [
     "partners": [
       "United Nations High Commissioner for Refugees",
       "International non-profits",
-      "Private Sector Organizations"
+      "Private-sector organizations"
     ]
   },
   {
@@ -157,7 +157,7 @@ var tracker = [
     "partners": [
       "United Nations High Commissioner for Refugees",
       "International non-profits",
-      "Private Sector Organizations"
+      "Private-sector organizations"
     ]
   },
   {
@@ -172,7 +172,7 @@ var tracker = [
     "year": "2015",
     "company": "Bloom Five",
     "partners": [
-      "Refugee-owned Businesses"
+      "Refugee-owned businesses"
     ]
   },
   {
@@ -218,7 +218,8 @@ var tracker = [
     "year": "2015",
     "company": "C&A Foundation",
     "partners": [
-      "International And Local non-profits"
+      "International non-profits",
+      "Local non-profits"
     ]
   },
   {
@@ -248,7 +249,7 @@ var tracker = [
     "year": "2016",
     "company": "Chobani",
     "partners": [
-      "Refugee-owned Businesses"
+      "Refugee-owned businesses"
     ]
   },
   {
@@ -264,7 +265,7 @@ var tracker = [
     "company": "Cisco",
     "partners": [
       "International non-profits",
-      "Private Sector Organizations"
+      "Private-sector organizations"
     ]
   },
   {
@@ -294,7 +295,7 @@ var tracker = [
     "year": "2016",
     "company": "Continental",
     "partners": [
-      "Government Agencies"
+      "Government agencies"
     ]
   },
   {
@@ -309,7 +310,7 @@ var tracker = [
     "year": "2016",
     "company": "Cotopaxi",
     "partners": [
-      "Government Agencies",
+      "Government agencies",
       "Local non-profits"
     ]
   },
@@ -325,7 +326,7 @@ var tracker = [
     "year": "2016",
     "company": "Coursera",
     "partners": [
-      "Government Agencies",
+      "Government agencies",
       "International non-profits"
     ]
   },
@@ -341,7 +342,7 @@ var tracker = [
     "year": "2015",
     "company": "Daimler",
     "partners": [
-      "Government Agencies"
+      "Government agencies"
     ]
   },
   {
@@ -371,7 +372,8 @@ var tracker = [
     "year": "2014",
     "company": "Deloitte",
     "partners": [
-      "International & Local non-profits"
+      "International non-profits",
+      "Local non-profits"
     ]
   },
   {
@@ -418,7 +420,7 @@ var tracker = [
     "partners": [
       "United Nations High Commissioner for Refugees",
       "International non-profits",
-      "Private Sector Organizations"
+      "Private-sector organizations"
     ]
   },
   {
@@ -450,7 +452,7 @@ var tracker = [
     "partners": [
       "United Nations High Commissioner for Refugees",
       "International non-profits",
-      "Private Sector Organizations"
+      "Private-sector organizations"
     ]
   },
   {
@@ -465,7 +467,8 @@ var tracker = [
     "year": "2015",
     "company": "FedEx",
     "partners": [
-      "International & local non-profits"
+      "International non-profits",
+      "local non-profits"
     ]
   },
   {
@@ -480,7 +483,8 @@ var tracker = [
     "year": "2016",
     "company": "Goldman Sachs",
     "partners": [
-      "International & Local non-profits"
+      "International non-profits",
+      "Local non-profits"
     ]
   },
   {
@@ -587,7 +591,8 @@ var tracker = [
     "year": "2016",
     "company": "IBM",
     "partners": [
-      "International & Local non-profits"
+      "International non-profits",
+      "Local non-profits"
     ]
   },
   {
@@ -665,7 +670,7 @@ var tracker = [
     "partners": [
       "United Nations High Commissioner for Refugees",
       "International non-profits",
-      "Private Sector Organizations "
+      "Private-sector organizations"
     ]
   },
   {
@@ -729,7 +734,8 @@ var tracker = [
     "company": "McKinsey & Co.",
     "partners": [
       "United Nations High Commissioner for Refugees",
-      "International & local non-profits "
+      "International non-profits",
+      "local non-profits"
     ]
   },
   {
@@ -744,7 +750,7 @@ var tracker = [
     "year": "2015",
     "company": "Microsoft",
     "partners": [
-      "Numerous Partners of different types"
+      "Multiple partners"
     ]
   },
   {
@@ -760,7 +766,7 @@ var tracker = [
     "company": "Newton Supply Co",
     "partners": [
       "International non-profits",
-      "Private Sector Organizations "
+      "Private-sector organizations"
     ]
   },
   {
@@ -776,7 +782,7 @@ var tracker = [
     "company": "Oliver Wyman",
     "partners": [
       "International non-profits",
-      "Private Sector Organizations "
+      "Private-sector organizations"
     ]
   },
   {
@@ -791,7 +797,7 @@ var tracker = [
     "year": "2015",
     "company": "Nova Credit",
     "partners": [
-      "Government Agencies"
+      "Government agencies"
     ]
   },
   {
@@ -867,7 +873,7 @@ var tracker = [
     "year": "2016",
     "company": "ReDI",
     "partners": [
-      "Private Sector Organizations"
+      "Private-sector organizations"
     ]
   },
   {
@@ -882,7 +888,7 @@ var tracker = [
     "year": "",
     "company": "SAP",
     "partners": [
-      "Government Agencies"
+      "Government agencies"
     ]
   },
   {
@@ -912,7 +918,8 @@ var tracker = [
     "year": "2015",
     "company": "Schibsted Media Group",
     "partners": [
-      "International & Local non-profits"
+      "International non-profits",
+      "Local non-profits"
     ]
   },
   {
@@ -927,8 +934,9 @@ var tracker = [
     "year": "",
     "company": "Soros Fund Management",
     "partners": [
-      "International & Local non-profits",
-      "Private Sector Organizations"
+      "International non-profits",
+      "Local non-profits",
+      "Private-sector organizations"
     ]
   },
   {
@@ -989,7 +997,7 @@ var tracker = [
     "company": "Twilio",
     "partners": [
       "International non-profits",
-      "Private Sector Organizations"
+      "Private-sector organizations"
     ]
   },
   {
@@ -1019,7 +1027,7 @@ var tracker = [
     "year": "2015",
     "company": "UPS",
     "partners": [
-      "Numerous Partners of different types"
+      "Multiple partners"
     ]
   },
   {
@@ -1080,7 +1088,7 @@ var tracker = [
     "year": "2016",
     "company": "Zynga",
     "partners": [
-      "Government Agencies",
+      "Government agencies",
       "International non-profits"
     ]
   },
@@ -1141,8 +1149,9 @@ var tracker = [
     "year": "2017",
     "company": "Power Africa initiative",
     "partners": [
-      "International & Local non-profits",
-      "Private Sector Organizations"
+      "International non-profits",
+      "Local non-profits",
+      "Private-sector organizations"
     ]
   }
 ]
