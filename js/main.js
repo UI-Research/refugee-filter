@@ -140,7 +140,9 @@ $(document).ready(function(){
     $('#myDropdown3').append(option)
   }
 
-  // should we sort by alphabetical?
+  //sort by alphabetical
+  tracker = cardSort(tracker)
+
   // draw this mini cards
   for (var i = 0; i < tracker.length; i++) {
     // add all minis to the DOM
@@ -191,7 +193,6 @@ $(document).ready(function(){
 
     var finalData;
     finalData =filterCards(tracker,filters)
-    console.log(finalData)
 
     finalData = cardSort(finalData)
 
@@ -215,19 +216,18 @@ $(document).ready(function(){
 
 
 
-
-  $(".exex").click(function(e){
+  $("#main-container-inner-inner").on("click",".exex",function(e){
     e.stopPropagation();
+
     $(this).parent().parent().hide();
     $('.card-mini').removeClass('active');
+  })  
 
-    // remove active from the mini card
-  })
-
-  $(".card-mini").click(function(e){
+  
+  $("#main-container-inner-inner").on("click",".card-mini",function(e){
     e.stopPropagation();
 
-    // some reason this isn't working for newly createed itemss
+    // some reason this isn't working for newly createed items
 
     // if active already do nothing
     // else 
@@ -247,8 +247,7 @@ $(document).ready(function(){
       // create large card 
       $(".card-large").remove()
       // get the data from this mini card  that was selected... add it to the large card. 
-      console.log(this)
-      // console.log(finalData)
+      
       var largey = '<div class="card-large"><div class="card-inner"><div class="exex"></div><div class="card-inner-large-text"><div class="map"><img src="/images/world.png"><div class="map-text"><p>Works with refugees in areas in Africa, Asia, and the Middle East. </p></div></div><div class="large-text-container"><div class="large-text-inner"><h1>Encel Core Onlus</h1><h3>Consulting</h3><p>Nunc et placerat eros, eget vestibulum nisi. Pellentesque habitant morbi tristique senectus et netus et malesuadafames ac turpis egestas. Vivamus id accumsan urna, vitae pharetra mi. Nulla ut placerat magna. Aenean euismod turpisfelis, vel scelerisque est blandit ut. Nullam in lectus mi. Curabitur porta placerat mauris, sed posuere mi aliquam et</p><p><strong>Pellentesque:</strong> in orci vitae ex scelerisque suscipit.</p><p><strong>Started:</strong> 2005</p></div></div></div></div></div>';
       $("#main-container-inner-inner").append(largey);
 
@@ -269,16 +268,11 @@ $(document).ready(function(){
       var width = $( document ).width();
       var newScreen = detectSize(width);
 
-      // console.log(screenSize)
-
       if (screenSize != newScreen) {      
         // move the large item to new spot
         // if ($("card-large").is(":visible")) {
           screenSize = newScreen;
           var cardIndex = $('.card-mini').index($('.card-mini.active'));
-          // console.log(cardIndex)
-
-          // console.log($('.card-mini.active'))
 
           var row = Math.floor(cardIndex / numCards[screenSize]) + 1;
           var cardspRow = numCards[screenSize];
