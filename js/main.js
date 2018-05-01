@@ -27,6 +27,34 @@ function detectSize(w) {
   return s;
 }
 
+function GrabImage(d) {
+  var imgNames = []
+  for (var i = 0; i < d.length; i++) {
+    if (d[i] == "Global") {imgNames.push("Gl")}
+    else if (d[i] == "Europe") {imgNames.push("Eu")}
+    else if (d[i] == "Middle East") {imgNames.push("Mi")}
+    else if (d[i] == "Asia") {imgNames.push("As")}
+    else if (d[i] == "Africa") {imgNames.push("Af")}
+    else if (d[i] == "North America") {imgNames.push("No")}
+  }
+
+  var img = imgNames.join('-')
+  return "/images/maps/map-" + img + ".jpg"
+}
+
+function MultiplesString(d) {
+  if (d.length == 1) {
+    return d[0];
+  } 
+  else if (d.length === 2) {    
+    return d[0] + " and " + d[1];
+  }
+  else if (d.length >= 3) {    
+    var dd = d.pop()
+    return d.join(', ') + ", and " + dd;
+  }
+}
+
 function cardSort(data) {
     var sortedArray = data.sort(function (a, b) {
           if (a.company < b.company) return -1;
@@ -148,6 +176,7 @@ $(document).ready(function(){
     // add all minis to the DOM
     var mini = '<div class="card-mini"><div class="card-inner mini"><div class="card-inner-mini-text"><h1>' + tracker[i].company +'</h1><h3>' + tracker[i].sector + '</h3></div></div></div>';
     $("#main-container-inner-inner").append(mini);
+    $("#main-container-inner-inner").children().last().data(tracker[i]);
 
     // add all minis to the PassFilterSet=yes to begin with
     // console.log(PassFilterSet)
@@ -206,6 +235,7 @@ $(document).ready(function(){
       // add all minis to the DOM
       var mini = '<div class="card-mini"><div class="card-inner mini"><div class="card-inner-mini-text"><h1>' + finalData[i].company +'</h1><h3>' + finalData[i].sector + '</h3></div></div></div>';
       $("#main-container-inner-inner").append(mini);     
+      $("#main-container-inner-inner").children().last().data(finalData[i]);
     }
 
 
@@ -248,7 +278,19 @@ $(document).ready(function(){
       $(".card-large").remove()
       // get the data from this mini card  that was selected... add it to the large card. 
       
-      var largey = '<div class="card-large"><div class="card-inner"><div class="exex"></div><div class="card-inner-large-text"><div class="map"><img src="/images/world.png"><div class="map-text"><p>Works with refugees in areas in Africa, Asia, and the Middle East. </p></div></div><div class="large-text-container"><div class="large-text-inner"><h1>Encel Core Onlus</h1><h3>Consulting</h3><p>Nunc et placerat eros, eget vestibulum nisi. Pellentesque habitant morbi tristique senectus et netus et malesuadafames ac turpis egestas. Vivamus id accumsan urna, vitae pharetra mi. Nulla ut placerat magna. Aenean euismod turpisfelis, vel scelerisque est blandit ut. Nullam in lectus mi. Curabitur porta placerat mauris, sed posuere mi aliquam et</p><p><strong>Pellentesque:</strong> in orci vitae ex scelerisque suscipit.</p><p><strong>Started:</strong> 2005</p></div></div></div></div></div>';
+      // console.log($(this).data())
+
+      var large = {"mapImg": GrabImage($(this).data().regions),
+        "regions": MultiplesString($(this).data().regions),
+        "title": $(this).data().company,
+        "sector": $(this).data().sector,
+        "description": $(this).data().description,
+        "partners": MultiplesString($(this).data().partners),
+        "year": $(this).data().year
+      }
+
+      var largey = '<div class="card-large"><div class="card-inner"><div class="exex"></div><div class="card-inner-large-text"><div class="map"><img src="' + large.mapImg + '"><div class="map-text"><p>Works with refugees in areas in ' + large.regions + '.</p></div></div><div class="large-text-container"><div class="large-text-inner"><h1>' + large.title + '</h1><h3>' + large.sector + '</h3><p>' + large.description + '</p><p><strong>Partners: </strong>' + large.partners + '</p><p><strong>Started: </strong>' + large.year + '</p></div></div></div></div></div>';
+      // var largey = "farts"
       $("#main-container-inner-inner").append(largey);
 
       // change large card location

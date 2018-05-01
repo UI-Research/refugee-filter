@@ -297,6 +297,10 @@ a:hover {
           float: left;
           width: $FullMapSize;
 
+          img {
+            width: 100%;
+          }
+
           .map-text {
             border-top: 1px solid #D2D2D2;
             color: #696969;
