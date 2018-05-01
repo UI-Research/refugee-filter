@@ -43,6 +43,9 @@ function GrabImage(d) {
 }
 
 function MultiplesString(d) {
+  for (var i = 0; i < d.length; i++) {
+    if (d[i] == "Middle East") {d[i] = "the Middle East"}
+  }
   if (d.length == 1) {
     return d[0];
   } 
@@ -62,6 +65,15 @@ function cardSort(data) {
           return 0;
         });
     return sortedArray;
+}
+
+function mapSort(data) {
+    var sortedArray = data.sort(function (a, b) {
+        if (a < b) return -1;
+        else if (a > b) return 1;
+        return 0;
+      });
+  return sortedArray;
 }
 
 function AddRemoveItem(dis,filters) {
@@ -178,9 +190,6 @@ $(document).ready(function(){
     $("#main-container-inner-inner").append(mini);
     $("#main-container-inner-inner").children().last().data(tracker[i]);
 
-    // add all minis to the PassFilterSet=yes to begin with
-    // console.log(PassFilterSet)
-    // PassFilterSet["yes"].push(tracker[i])
    
   }
 
@@ -280,8 +289,10 @@ $(document).ready(function(){
       
       // console.log($(this).data())
 
-      var large = {"mapImg": GrabImage($(this).data().regions),
-        "regions": MultiplesString($(this).data().regions),
+      var places = mapSort($(this).data().regions);
+
+      var large = {"mapImg": GrabImage(places),
+        "regions": MultiplesString(places),
         "title": $(this).data().company,
         "sector": $(this).data().sector,
         "description": $(this).data().description,
