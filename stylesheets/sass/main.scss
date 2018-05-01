@@ -200,6 +200,67 @@ a:hover {
   max-width: 1100px;
   margin: 0 auto;
 
+  #filter-container {
+    .filter-header {
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 19px;
+      float: left;
+    }
+
+    .clearAll {
+      float: left;
+      line-height: 19px;
+      font-size: 14px;
+      color: #1696D2;
+      padding-left: 20px;
+      cursor: pointer;
+    }
+
+    #filter-tabs {
+      clear: both;
+
+      .tab {
+        // height: 32px;
+        background: #E3E3E3;
+        float: left;
+        padding: 8px;
+        margin-right: 10px;
+        margin-top: 10px;
+
+        .tab-type, .tab-name, .tab-x {
+          display: inline;
+          line-height: 18px;
+          font-size: 13px;
+        }
+
+        .tab-name {
+          font-weight: 700;
+        }
+
+        .tab-x {
+          margin-left: 10px;
+          margin-top: 4px;
+          width: 12px;
+          height: 12px;
+          background-image: url(../../images/exex.png);
+          background-size: 20px 20px;
+          background-position: center;
+          background-repeat: no-repeat;
+          cursor: pointer;
+          float: right;
+        }
+
+      }
+
+
+    }
+  }
+
+  #main-container-inner-inner {
+    clear: both;
+  }
+
   .card-mini {
     width: 25%;
     height: 150px;

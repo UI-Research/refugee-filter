@@ -39,7 +39,7 @@ body {
   fill: rgb(222,222,222);
 }
 
-.subunit {
+.subunit.active {
   stroke:rgb(35,151,208);
   fill:rgb(35,151,208);
 }
@@ -90,7 +90,7 @@ d3.json("data/ne_110m_admin_0_countries/world-110m.json", function(error, world)
     .enter().append("path")    
       .attr("d", path)
       .attr("class",function(d){
-        if (d.properties.continent == "Africa" || d.properties.continent == "Asia" && d.properties.subregion != "Western Asia" && d.id != "IRN") {
+        if (d.properties.subregion == "Western Asia" || d.id == "IRN") {
           return "subunit active"
         } else {
           return "subunit"  

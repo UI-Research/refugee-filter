@@ -1,10 +1,10 @@
 var sector = ["Energy","Consulting","Manufacturing","Technology","Services","Education","Finance","Health","Other"];
-var regions = ["Global","Asia","Europe","Africa","North America","Middle East"];
-var partners = ["United Nations High Commissioner for Refugees","International non-profits","Government agencies","Refugee-owned businesses","Multiple partners","Private-sector organizations","Local non-profits"]
+var region = ["Global","Asia","Europe","Africa","North America","Middle East"];
+var partner = ["United Nations High Commissioner for Refugees","International non-profits","Government agencies","Refugee-owned businesses","Multiple partner","Private-sector organizations","Local non-profits"]
 var filters = {
   "sector":[],
-  "regions":[],
-  "partners":[  ]
+  "region":[],
+  "partner":[  ]
 };
 
 var PassFilterSet = []
@@ -32,7 +32,7 @@ function GrabImage(d) {
   for (var i = 0; i < d.length; i++) {
     if (d[i] == "Global") {imgNames.push("Gl")}
     else if (d[i] == "Europe") {imgNames.push("Eu")}
-    else if (d[i] == "Middle East") {imgNames.push("Mi")}
+    else if (d[i] == "Middle East" || d[i] == "the Middle East") {imgNames.push("Mi")}
     else if (d[i] == "Asia") {imgNames.push("As")}
     else if (d[i] == "Africa") {imgNames.push("Af")}
     else if (d[i] == "North America") {imgNames.push("No")}
@@ -76,30 +76,30 @@ function mapSort(data) {
   return sortedArray;
 }
 
-function AddRemoveItem(dis,filters) {
-
-  // figure out which group was selected from
-    var nowList;
-    if ($(dis).hasClass("sector")) {nowList = filters.sector;}
-    else if ($(dis).hasClass("regions")) {nowList = filters.regions;} 
-    else if ($(dis).hasClass("partners")) {nowList = filters.partners}
+function AddRemoveItem(item,type,nowList,isActive)   {  
     
     // if not active, activate this filter by adding it to the filters item
-    if ($(dis).hasClass("active") == false) {      
+    if (isActive == false) {      
       var q = 0;
       for (var i = 0; i < nowList.length; i++) {
-        if (nowList[i] == $(dis)[0].innerHTML) {
+        if (nowList[i] == item) {
           q++;
         }
       }
       if (q < 1) {
-        nowList.push($(dis)[0].innerHTML)
+        nowList.push(item)
+
+        // Add item to the tabs 
+        var tabber = '<div class="tab"><div class="tab-type">' + type +': </div><div class="tab-name">' + item + '</div><div class="tab-x"></div></div></div>';
+        $("#filter-tabs").append(tabber)
+
       }      
     } 
     // if the clicked thing is already an active filter, remove the filter
-    else {      
-      var index = nowList.indexOf($(dis)[0].innerHTML);
+    else {                  
+      var index = nowList.indexOf(item);      
       if (index > -1) {
+        $( ".tab-name:contains("+ item + ")" ).parent().remove()
         nowList.splice(index, 1);
       }
     }
@@ -166,16 +166,16 @@ $(document).ready(function(){
     $('#myDropdown1').append(option)
   } 
 
- for (var i = 0; i < regions.length; i++) {
+ for (var i = 0; i < region.length; i++) {
     var bar = "<div class='bar'></div>"
-    var option = "<div class='option regions'>"+ regions[i] +"</div>"
+    var option = "<div class='option region'>"+ region[i] +"</div>"
     $('#myDropdown2').append(bar)
     $('#myDropdown2').append(option)
   }
 
-  for (var i = 0; i < partners.length; i++) {
+  for (var i = 0; i < partner.length; i++) {
     var bar = "<div class='bar'></div>"
-    var option = "<div class='option partners'>"+ partners[i] +"</div>"
+    var option = "<div class='option partner'>"+ partner[i] +"</div>"
     $('#myDropdown3').append(bar)
     $('#myDropdown3').append(option)
   }
@@ -227,7 +227,15 @@ $(document).ready(function(){
     var t0 = performance.now();
 
     // Add/remove items from filter array
-    AddRemoveItem(this,filters)
+    console.log(this)
+
+  // figure out which group was selected from
+    var nowList;
+    if ($(this).hasClass("sector")) {nowList = filters.sector; var type = "Sector"}
+    else if ($(this).hasClass("region")) {nowList = filters.region; var type = "Region"} 
+    else if ($(this).hasClass("partner")) {nowList = filters.partner; var type = "Partner"}
+
+    AddRemoveItem($(this)[0].innerHTML,type,nowList,$(this).hasClass("active"))    
 
     var finalData;
     finalData =filterCards(tracker,filters)
@@ -253,7 +261,61 @@ $(document).ready(function(){
     console.log("Filtering took " + (t1 - t0) + " milliseconds.")
   })
 
+  $("#filter-tabs").on("click",".tab-x",function(e){
+    e.stopPropagation();
 
+    // console.log($(this).parent().children(":eq(0)")[0].innerHTML)
+    // $(this).parent().remove()
+    var item = $(this).parent().children(":eq(1)")[0].innerHTML;
+    var type = $(this).parent().children(":eq(0)")[0].innerHTML.slice(0, -2);
+    var nowList = filters[type.toLowerCase()]
+
+    // change the filters array
+    AddRemoveItem(item,type,nowList,true)
+
+    // change the filtered card set
+    var finalData;
+    finalData =filterCards(tracker,filters)
+
+    finalData = cardSort(finalData)    
+
+    // rebuild the cards 
+    $("#main-container-inner-inner").empty();
+    for (var i = 0; i < finalData.length; i++) {
+      // add all minis to the DOM
+      var mini = '<div class="card-mini"><div class="card-inner mini"><div class="card-inner-mini-text"><h1>' + finalData[i].company +'</h1><h3>' + finalData[i].sector + '</h3></div></div></div>';
+      $("#main-container-inner-inner").append(mini);     
+      $("#main-container-inner-inner").children().last().data(finalData[i]);
+    }
+
+    // remove the actives
+    $('.' + type.toLowerCase() + ':contains(' + item + ')').removeClass("active")
+    $('.' + type.toLowerCase() + ':contains(' + item + ')').prev().removeClass("active")
+  })
+
+
+  $("#filter-container").on("click",".clearAll",function(e){
+    e.stopPropagation();
+
+    // reset data
+    finalData = JSON.parse(JSON.stringify(tracker))
+
+    // rebuild the cards 
+    $("#main-container-inner-inner").empty();
+    for (var i = 0; i < finalData.length; i++) {
+      // add all minis to the DOM
+      var mini = '<div class="card-mini"><div class="card-inner mini"><div class="card-inner-mini-text"><h1>' + finalData[i].company +'</h1><h3>' + finalData[i].sector + '</h3></div></div></div>';
+      $("#main-container-inner-inner").append(mini);     
+      $("#main-container-inner-inner").children().last().data(finalData[i]);
+    }
+
+    // remove all tabs
+    $("#filter-tabs").empty()
+
+    // remove active in options
+    $('.option').removeClass("active")
+    $('.bar').removeClass("active")    
+  })
 
   $("#main-container-inner-inner").on("click",".exex",function(e){
     e.stopPropagation();
@@ -289,18 +351,18 @@ $(document).ready(function(){
       
       // console.log($(this).data())
 
-      var places = mapSort($(this).data().regions);
+      var places = mapSort($(this).data().region);
 
       var large = {"mapImg": GrabImage(places),
-        "regions": MultiplesString(places),
+        "region": MultiplesString(places),
         "title": $(this).data().company,
         "sector": $(this).data().sector,
         "description": $(this).data().description,
-        "partners": MultiplesString($(this).data().partners),
+        "partner": MultiplesString($(this).data().partner),
         "year": $(this).data().year
       }
 
-      var largey = '<div class="card-large"><div class="card-inner"><div class="exex"></div><div class="card-inner-large-text"><div class="map"><img src="' + large.mapImg + '"><div class="map-text"><p>Works with refugees in areas in ' + large.regions + '.</p></div></div><div class="large-text-container"><div class="large-text-inner"><h1>' + large.title + '</h1><h3>' + large.sector + '</h3><p>' + large.description + '</p><p><strong>Partners: </strong>' + large.partners + '</p><p><strong>Started: </strong>' + large.year + '</p></div></div></div></div></div>';
+      var largey = '<div class="card-large"><div class="card-inner"><div class="exex"></div><div class="card-inner-large-text"><div class="map"><img src="' + large.mapImg + '"><div class="map-text"><p>Works with refugees in areas in ' + large.region + '.</p></div></div><div class="large-text-container"><div class="large-text-inner"><h1>' + large.title + '</h1><h3>' + large.sector + '</h3><p>' + large.description + '</p><p><strong>Partners: </strong>' + large.partner + '</p><p><strong>Started: </strong>' + large.year + '</p></div></div></div></div></div>';
       // var largey = "farts"
       $("#main-container-inner-inner").append(largey);
 
