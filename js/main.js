@@ -362,7 +362,7 @@ $(document).ready(function(){
         "year": $(this).data().year
       }
 
-      var largey = '<div class="card-large"><div class="card-inner"><div class="exex"></div><div class="card-inner-large-text"><div class="map"><img src="' + large.mapImg + '"><div class="map-text"><p>Works with refugees in areas in ' + large.region + '.</p></div></div><div class="large-text-container"><div class="large-text-inner"><h1>' + large.title + '</h1><h3>' + large.sector + '</h3><p>' + large.description + '</p><p><strong>Partners: </strong>' + large.partner + '</p><p><strong>Started: </strong>' + large.year + '</p></div></div></div></div></div>';
+      var largey = '<div class="card-large"><div class="card-inner"><div class="exex"></div><div class="card-inner-large-text"><div class="map"><img src="' + large.mapImg + '"><div class="map-text"><p>Works with refugees in areas in ' + large.region + '</p></div></div><div class="large-text-container"><div class="large-text-inner"><h1>' + large.title + '</h1><h3>' + large.sector + '</h3><p>' + large.description + '</p><p><strong>Partners: </strong>' + large.partner + '</p><p><strong>Started: </strong>' + large.year + '</p></div></div></div></div></div>';
       // var largey = "farts"
       $("#main-container-inner-inner").append(largey);
 

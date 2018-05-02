@@ -79,6 +79,16 @@ a:hover {
     width:100%;
     max-width: 1100px;
     margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+
+    .list-spacer {    
+      height: 10px;
+      display: inline;
+      border: 1px solid #D2D2D2;
+      margin-right: 20px;
+    }
 
     .dropbtn {
       position: relative;
@@ -89,7 +99,7 @@ a:hover {
       font-family: Lato;
       font-weight: 700;
       // border-right: 1px solid #D2D2D2;
-      margin: 16px;
+      margin: 16px;      
       margin-right: 0px;
       padding-right: 16px;
       padding-left: 0px;
@@ -201,6 +211,9 @@ a:hover {
   margin: 0 auto;
 
   #filter-container {
+    padding-left: 15px;
+    padding-right: 15px;
+
     .filter-header {
       text-transform: uppercase;
       font-size: 14px;
@@ -225,8 +238,8 @@ a:hover {
         background: #E3E3E3;
         float: left;
         padding: 8px;
-        margin-right: 10px;
-        margin-top: 10px;
+        margin-right: 15px;
+        margin-top: 15px;
 
         .tab-type, .tab-name, .tab-x {
           display: inline;
@@ -259,6 +272,7 @@ a:hover {
 
   #main-container-inner-inner {
     clear: both;
+    padding-top: 10px;
   }
 
   .card-mini {
@@ -417,7 +431,7 @@ a:hover {
 
   @media (max-width: 1100px) {
     .card-mini {
-     width:33%; 
+     width:33.333%; 
     }
     .card-large {
       height: 450px;
