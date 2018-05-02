@@ -39,7 +39,7 @@ function GrabImage(d) {
   }
 
   var img = imgNames.join('-')
-  return "/images/maps/map-" + img + ".jpg"
+  return "images/maps/map-" + img + ".jpg"
 }
 
 function MultiplesString(d) {
@@ -227,7 +227,7 @@ $(document).ready(function(){
     var t0 = performance.now();
 
     // Add/remove items from filter array
-    console.log(this)
+    // console.log(this)
 
   // figure out which group was selected from
     var nowList;
@@ -258,7 +258,7 @@ $(document).ready(function(){
 
     // timer
     var t1 = performance.now();
-    console.log("Filtering took " + (t1 - t0) + " milliseconds.")
+    // console.log("Filtering took " + (t1 - t0) + " milliseconds.")
   })
 
   $("#filter-tabs").on("click",".tab-x",function(e){
