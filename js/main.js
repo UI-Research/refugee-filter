@@ -213,8 +213,8 @@ $(document).ready(function(){
 
   $(".dropbtn").click(function(e){  
     e.stopPropagation();
-    $(this).siblings().children().removeClass("active")
-    $(this).siblings().children().removeClass("active")
+    // $(this).siblings().children().removeClass("active")    
+    $(this).parent().siblings().children().children().removeClass("active")    
     $(this).children().toggleClass("active")  
   })
 
