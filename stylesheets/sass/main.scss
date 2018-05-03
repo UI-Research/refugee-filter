@@ -164,7 +164,7 @@ a:hover {
     }
 
     #myDropdown1.dropdown-content {
-      left: 0px;
+      left: -1px;
       width: 133px;  
     }
 
@@ -301,7 +301,7 @@ a:hover {
       background-color: $cerulean;
       color: #ffffff !important;
       cursor: pointer;  
-      h1 {
+      h1, h3 {
        color: #ffffff !important; 
       }
     }

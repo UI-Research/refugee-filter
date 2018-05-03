@@ -2908,7 +2908,7 @@ a:hover {
 }
 /* line 166, ../sass/main.scss */
 #drop-list #drop-list-inner #myDropdown1.dropdown-content {
-  left: 0px;
+  left: -1px;
   width: 133px;
 }
 /* line 173, ../sass/main.scss */
@@ -3038,7 +3038,7 @@ a:hover {
   cursor: pointer;
 }
 /* line 304, ../sass/main.scss */
-#main-container-inner .card-mini.active .card-inner.mini h1 {
+#main-container-inner .card-mini.active .card-inner.mini h1, #main-container-inner .card-mini.active .card-inner.mini h3 {
   color: #ffffff !important;
 }
 /* line 311, ../sass/main.scss */
