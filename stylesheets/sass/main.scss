@@ -335,7 +335,8 @@ a:hover {
         margin: 0;
         font-size:13px;
         line-height:25px;
-        font-weight: 300;
+        font-weight: 400;
+        color: #353535;
       }
     }
 
@@ -343,7 +344,7 @@ a:hover {
       background-color: $cerulean;
       color: #ffffff !important;
       cursor: pointer;  
-      h1 {
+      h1, h3 {
        color: #ffffff !important; 
       }
     }
