@@ -9,6 +9,29 @@ var filters = {
 
 var PassFilterSet = []
 
+function preload(arrayOfImages) {
+    $(arrayOfImages).each(function () {
+        $('<img />').attr('src',this).appendTo('body').css('display','none');
+    });
+}
+
+// Usage:
+
+preload([
+  'images/arrow_down.png',
+  'images/arrow_blue_down.png',
+  'images/arrow_blue_up.png',
+  'images/maps/map-Af-As-Mi.jpg',
+  'images/maps/map-Af-As.jpg',
+  'images/maps/map-Af-Mi.jpg',
+  'images/maps/map-Af.jpg',
+  'images/maps/map-As.jpg',
+  'images/maps/map-Eu.jpg',
+  'images/maps/map-Gl.jpg',
+  'images/maps/map-Mi.jpg',
+  'images/maps/map-No.jpg'
+]);
+
 
 var numCards = [4,3,2,1];
 var screenSize;
