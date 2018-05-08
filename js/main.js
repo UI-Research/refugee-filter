@@ -1,5 +1,5 @@
 var sector = ["Energy","Consulting","Manufacturing","Technology","Services","Education","Finance","Health","Other"];
-var region = ["Global","Asia","Europe","Africa","North America","Middle East"];
+var region = ["Global","Asia","Europe","Africa","North America","the Middle East"];
 var partner = ["United Nations High Commissioner for Refugees","International non-profits","Government agencies","Refugee-owned businesses","Multiple partner","Private-sector organizations","Local non-profits"]
 var filters = {
   "sector":[],
@@ -261,7 +261,11 @@ $(document).ready(function(){
     AddRemoveItem($(this)[0].innerHTML,type,nowList,$(this).hasClass("active"))    
 
     var finalData;
+    
+    console.log(filters)
     finalData =filterCards(tracker,filters)
+
+
 
     finalData = cardSort(finalData)
 
@@ -371,8 +375,6 @@ $(document).ready(function(){
       // create large card 
       $(".card-large").remove()
       // get the data from this mini card  that was selected... add it to the large card. 
-      
-      // console.log($(this).data())
 
       var places = mapSort($(this).data().region);
 
@@ -392,11 +394,22 @@ $(document).ready(function(){
         large.region = "in " + large.region;
       }
 
-      if (large.sector != large.sector2) {
+      console.log(large.sector)
+      console.log(large.sector2)
+      if (!large.sector2) {
+        large.sector = large.sector
+      }
+      else if (large.sector != large.sector2) {
         large.sector = large.sector + " &ndash; " + large.sector2;
+      } 
+
+      if (!large.year) {
+        large.year = ''
+      } else {
+        large.year = '<p><strong>Started: </strong>' + large.year + '</p>';
       }
 
-      var largey = '<div class="card-large"><div class="card-inner"><div class="exex"></div><div class="card-inner-large-text"><div class="map"><img src="' + large.mapImg + '"><div class="map-text"><p>Works with refugees in areas ' + large.region + '</p></div></div><div class="large-text-container"><div class="large-text-inner"><h1>' + large.title + '</h1><h3>' + large.sector + '</h3><p>' + large.description + '</p><p><strong>Partners: </strong>' + large.partner + '</p><p><strong>Started: </strong>' + large.year + '</p></div></div></div></div></div>';
+      var largey = '<div class="card-large"><div class="card-inner"><div class="exex"></div><div class="card-inner-large-text"><div class="map"><img src="' + large.mapImg + '"><div class="map-text"><p>Works with refugees in areas ' + large.region + '</p></div></div><div class="large-text-container"><div class="large-text-inner"><h1>' + large.title + '</h1><h3>' + large.sector + '</h3><p>' + large.description + '</p><p><strong>Partners: </strong>' + large.partner + '</p>' + large.year + '</div></div></div></div></div>';
       // var largey = "farts"
       $("#main-container-inner-inner").append(largey);
 
