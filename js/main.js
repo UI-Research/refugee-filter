@@ -244,8 +244,16 @@ $(document).ready(function(){
 
 /////////////  // on click of options from the dropdown/ ////////////
 
+
+  $(".dropdown-content").click(function(e){
+    console.log('clicked')
+  });
+
   $(".option").click(function(e){
+  // $(".dropdown-content").on("click",".option",function(e){
     e.stopPropagation();
+
+    // console.log(this)
 
     var t0 = performance.now();
 
@@ -261,12 +269,11 @@ $(document).ready(function(){
     AddRemoveItem($(this)[0].innerHTML,type,nowList,$(this).hasClass("active"))    
 
     var finalData;
-    
-    console.log(filters)
+        
+    // find the data
     finalData =filterCards(tracker,filters)
 
-
-
+    // sort the data
     finalData = cardSort(finalData)
 
 
