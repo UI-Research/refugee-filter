@@ -244,11 +244,6 @@ $(document).ready(function(){
 
 /////////////  // on click of options from the dropdown/ ////////////
 
-
-  $(".dropdown-content").click(function(e){
-    console.log('clicked')
-  });
-
   $(".option").click(function(e){
   // $(".dropdown-content").on("click",".option",function(e){
     e.stopPropagation();
@@ -373,7 +368,7 @@ $(document).ready(function(){
 
       // find index of "this" relative to .card-mini's
       var cardIndex = $('.card-mini').index(this);
-      var width = $( document ).width();
+      var width = $( window ).width();
       screenSize = detectSize(width);
       var row = Math.floor(cardIndex / numCards[screenSize]) + 1;
       var cardspRow = numCards[screenSize];
@@ -401,8 +396,6 @@ $(document).ready(function(){
         large.region = "in " + large.region;
       }
 
-      console.log(large.sector)
-      console.log(large.sector2)
       if (!large.sector2) {
         large.sector = large.sector
       }
@@ -416,7 +409,7 @@ $(document).ready(function(){
         large.year = '<p><strong>Started: </strong>' + large.year + '</p>';
       }
 
-      var largey = '<div class="card-large"><div class="card-inner"><div class="exex"></div><div class="card-inner-large-text"><div class="map"><img src="' + large.mapImg + '"><div class="map-text"><p>Works with refugees in areas ' + large.region + '</p></div></div><div class="large-text-container"><div class="large-text-inner"><h1>' + large.title + '</h1><h3>' + large.sector + '</h3><p>' + large.description + '</p><p><strong>Partners: </strong>' + large.partner + '</p>' + large.year + '</div></div></div></div></div>';
+      var largey = '<div class="card-large"><div class="card-inner"><div class="exex"></div><div class="card-inner-large-text"><div class="map"><img src="' + large.mapImg + '"><div class="map-text"><p>Works with refugees in areas ' + large.region + '</p></div></div><div class="large-text-container"><div class="large-text-inner"><h1>' + large.title + '</h1><h3>' + large.sector + '</h3><p>' + large.description + '</p><p><strong>Partners: </strong>' + large.partner + '</p>' + large.year + '</div></div></div><div class="clearer"></div></div></div>';
       // var largey = "farts"
       $("#main-container-inner-inner").append(largey);
 
@@ -434,7 +427,7 @@ $(document).ready(function(){
   })
 
   $( window ).resize(function() {
-      var width = $( document ).width();
+      var width = $( window ).width();
       var newScreen = detectSize(width);
 
       if (screenSize != newScreen) {      
