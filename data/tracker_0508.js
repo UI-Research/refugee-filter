@@ -122,7 +122,7 @@ var tracker = [
 },
 {
   "company": "Axiom Education",
-  "description": "Axiom Education has partnered with nonprofits in the education sector to develop online K\u201312 education in multiple languages to provide hundreds of culturally sensitive, no-cost classes and training programs to refugees.",
+  "description": "Axiom Education has partnered with nonprofits in the education sector to develop online K\u201312 education in multiple languages and to provide hundreds of culturally sensitive, no-cost classes and training programs to refugees.",
   "sector": "Education",
   "sector2": "",
   "region": [
@@ -175,7 +175,7 @@ var tracker = [
     " Africa"
   ],
   "partner": [
-    " International nonprofit",
+    " International nonprofits",
     " local nonprofits"
   ],
   "partner2": "Large humanitarian organizations, Maternity Foundation, University of Southern Denmark and University of Copenhagen",
@@ -204,7 +204,7 @@ var tracker = [
     "the Middle East"
   ],
   "partner": [
-    " International nonprofit",
+    " International nonprofits",
     " local nonprofits"
   ],
   "partner2": "Save the Children, local nonprofits",
@@ -226,7 +226,7 @@ var tracker = [
 },
 {
   "company": "Chobani",
-  "description": "Chobani has committed to hiring refugees at its factory in the US, which employs approximately 20 percent of its workforce, and also started the Tent Foundation, which helps match companies interested in helping refugees with nonprofits already working to support displaced individuals affected by the refugee crisis.",
+  "description": "Chobani has committed to hiring refugees at its factory in the US, which employs approximately 20 percent of its workforce, and also started the Tent Foundation, which helps match companies interested in helping refugees with nonprofits already working to support displaced individuals.",
   "sector": "Manufacturing",
   "sector2": "Food Production",
   "region": [
@@ -241,7 +241,7 @@ var tracker = [
 },
 {
   "company": "Cisco",
-  "description": "Cisco provides Wi-Fi hot spots, funds grants to aid agencies, and, in association with international nonprofits and other private-sector organizations, sends staff to volunteer with local nonprofits in Greece to help refugees in transit gain internet connectivity, allowing them to access important information to help them on their journey. So far, these efforts have reached over 250,000 refugees across Greece, Europe, and the Middle East.",
+  "description": "Cisco provides Wi-Fi hot spots, funds grants to aid agencies, and, in association with international nonprofits and other private-sector organizations, sends staff to volunteer with local nonprofits in Greece that help refugees in transit gain internet connectivity, allowing them to access important information to help them on their journey. So far, these efforts have reached over 250,000 refugees across Greece, Europe, and the Middle East.",
   "sector": "Technology",
   "sector2": "Communications",
   "region": [
@@ -301,7 +301,7 @@ var tracker = [
 },
 {
   "company": "Coursera",
-  "description": "Coursera offers refugees free and reduced prices for over 1,000 online courses, allowing any nonprofit or government agency that works with refugees to help their beneficiaries access free online courses in 65 countries.",
+  "description": "Coursera offers refugees free and reduced prices for over 1,000 online courses, allowing any nonprofit or government agency that works with refugees to help them access free online courses in 65 countries.",
   "sector": "Technology",
   "sector2": "",
   "region": [
@@ -330,7 +330,7 @@ var tracker = [
 },
 {
   "company": "Evershelter ",
-  "description": "Evershelter works with multiple international nonprofits to develop and pilot new shelters using a community-based methodology that provides increased security and resilience to refugees. The company also helps provide a humanitarian response focused on integration of services that tailors service delivery to the specific needs of vulnerable populations.",
+  "description": "Evershelter works with international nonprofits to develop and pilot new shelters using a community-based methodology that provides increased security and resilience to refugees. The company also helps provide a humanitarian response focused on integration of services that tailors service delivery to the specific needs of vulnerable populations.",
   "sector": "Services",
   "sector2": "",
   "region": [
@@ -344,7 +344,7 @@ var tracker = [
 },
 {
   "company": "Deloitte",
-  "description": "Deloitte supports refugee integration by helping international and local nonprofits stay better informed, coordinated, and connected during crises. The company is also using its technology to share information between sector-specific responders and to help agencies work together to coordinate the delivery of lifesaving support.",
+  "description": "Deloitte supports refugee integration by helping international and local nonprofits stay better informed, coordinated, and connected during crises. The company is also using its technology to share information between sector-specific responders and to help agencies coordinate the delivery of lifesaving support.",
   "sector": "Consulting",
   "sector2": "",
   "region": [
@@ -420,7 +420,7 @@ var tracker = [
 },
 {
   "company": "FedEx",
-  "description": "FedEx works with various international and local nonprofits to help transport goods, provide logistic expertise, and coordinate the transportation of donations. The company has gathered over 150,000 backpacks, among other goods, for refugees and pledged $1 million in cash aid to deliver medical supplies and aid. ",
+  "description": "FedEx works with international and local nonprofits to help transport goods, provide logistics expertise, and coordinate the transportation of donations. The company has gathered over 150,000 backpacks, among other goods, for refugees and pledged $1 million to deliver medical supplies and aid. ",
   "sector": "Other",
   "sector2": "Transportation",
   "region": [
@@ -508,7 +508,7 @@ var tracker = [
 },
 {
   "company": "Henry Schein",
-  "description": "Henry Schein provides health care products, mobile hospitals, and services to refugees in association with World Vision International and has donated $350,000 worth of supplies to ensure that medical professionals working with refugees have the supplies needed to provide crucial care.",
+  "description": "Henry Schein provides health care products, mobile hospitals, and services to refugees in association with World Vision International and has donated $350,000 worth of supplies to ensure that medical professionals working with refugees have the tools they need to provide crucial care.",
   "sector": "Health",
   "sector2": "",
   "region": [
@@ -566,7 +566,7 @@ var tracker = [
 },
 {
   "company": "Johnson & Johnson",
-  "description": "Johnson & Johnson is working to strengthen the resilience of refugee communities through a $1.75 million commitment to Save the Children. The goal is to support a shift from emergency aid to a focus on resiliency programming for displaced children and families in countries experiencing a high influx of refugees, with a focus on maternal care, newborns, child health, and early education. To date, the company\u2019s efforts have reached over 4.1 million people, including 2.6 million children.",
+  "description": "Johnson & Johnson is working to strengthen the resilience of refugee communities through a $1.75 million commitment to Save the Children. The goal is to support a shift from emergency aid to delivering resiliency programming for displaced children and families in countries experiencing a high influx of refugees, with a focus on maternal care, newborns, child health, and early education. To date, the company\u2019s efforts have reached over 4.1 million people, including 2.6 million children.",
   "sector": "Health",
   "sector2": "",
   "region": [
@@ -743,7 +743,7 @@ var tracker = [
 },
 {
   "company": "Novartis ",
-  "description": "Novartis, in association with the International Committee of the Red Cross, established a blueprint for improving diagnosis, treatment, and follow-up care for refugees in Lebanon, with a focus on affordability and accessibility of care.",
+  "description": "Novartis, in association with the International Committee of the Red Cross, established a blueprint for improving diagnoses, treatment, and follow-up care for refugees in Lebanon, with a focus on affordability and accessibility of care.",
   "sector": "Health",
   "sector2": "",
   "region": [
@@ -814,7 +814,7 @@ var tracker = [
 },
 {
   "company": "SAP",
-  "description": "SAP works with government agencies to develop apps that help refugees navigate bureaucracy and help officials register new arrivals. SAP also offers free online courses to refugees, holds teacher trainings to bolster refugee education programs, and holds Refugee Code Week workshops that give refugees marketable skills. The company has raised \u20ac900,000 euros to boost refugees\u2019 economic and social contributions to their host countries.",
+  "description": "SAP works with government agencies to develop apps that help refugees navigate bureaucracy and help officials register new arrivals. SAP also offers free online courses to refugees, holds teacher trainings to bolster refugee education programs, and holds Refugee Code Week workshops that teach refugees marketable skills. The company has raised \u20ac900,000 euros to boost refugees\u2019 economic and social contributions to their host countries.",
   "sector": "Technology",
   "sector2": "",
   "region": [
@@ -901,7 +901,7 @@ var tracker = [
 },
 {
   "company": "TripAdvisor",
-  "description": "TripAdvisor has partnered with the International Rescue Committee and Mercy Corps to donate $14 million to bring refugees food and water and gives its employees up to five days off annually to volunteer with causes that support displaced individuals. The company also provides in-kind support to help refugees access critical information using technology and provide education to youth.",
+  "description": "TripAdvisor has partnered with the International Rescue Committee and Mercy Corps to donate $14 million to bring refugees food and water and gives its employees up to five days off annually to volunteer with causes that support displaced individuals. The company also provides in-kind support to help educate youth and give refugees access to critical information using technology.",
   "sector": "Technology",
   "sector2": "",
   "region": [
@@ -945,7 +945,7 @@ var tracker = [
 },
 {
   "company": "UPS",
-  "description": "UPS developed a handheld tool, UPS Relief Link, that tracks and measures the distribution of relief supplies to refugees in camps. The company has also provided over $3 million to nonprofit organizations to help bolster their supply chains as well as their logistic, transportation, and human capital expertise.",
+  "description": "UPS developed a handheld tool, UPS Relief Link, that tracks and measures the distribution of relief supplies to refugees in camps. The company has also provided over $3 million to nonprofit organizations to help bolster their supply chains as well as their logistics, transportation, and human capital expertise.",
   "sector": "Other",
   "sector2": "Transportation",
   "region": [
@@ -1025,6 +1025,7 @@ var tracker = [
     "Africa"
   ],
   "partner": [
+    "United Nations High Commissioner for Refugees",
     "International nonprofits"
   ],
   "partner2": "Chatham House, Practical Action, Norwegian Refugee Council, United Nations High Commissioner for Refugees",
