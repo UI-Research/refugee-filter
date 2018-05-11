@@ -25,7 +25,7 @@ for i in range(1, len(rows)):
 	entry["description"] = rows[i][1]
 	entry["sector"] = rows[i][2]
 	entry["sector2"] = rows[i][3]
-	entry["region"] = rows[i][4].split(",")	
+	entry["region"] = rows[i][4].split(",")		
 	entry["partner"] = rows[i][5].split(",")
 	entry["partner2"] = rows[i][6]
 	entry["year"] = rows[i][7]
@@ -37,5 +37,5 @@ for i in range(1, len(rows)):
 # print JSONout
 # print rows[1]
 
-with open('tracker_0508.json', 'w') as f:
-    json.dump(JSONout, f)
+# with open('tracker_0508.json', 'w') as f:
+#     json.dump(JSONout, f)

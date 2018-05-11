@@ -1,6 +1,6 @@
 var sector = ["Energy","Consulting","Manufacturing","Technology","Services","Education","Finance","Health","Other"];
 var region = ["Global","Asia","Europe","Africa","North America","the Middle East"];
-var partner = ["United Nations High Commissioner for Refugees","International non-profits","Government agencies","Refugee-owned businesses","Multiple partner","Private-sector organizations","Local non-profits"]
+var partner = ["United Nations High Commissioner for Refugees","International nonprofits","Government agencies","Refugee-owned businesses","Multiple partners","Private-sector organizations","Local nonprofits"]
 var filters = {
   "sector":[],
   "region":[],
@@ -50,6 +50,10 @@ function detectSize(w) {
   return s;
 }
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function GrabImage(d) {
   var imgNames = []
   for (var i = 0; i < d.length; i++) {
@@ -60,7 +64,6 @@ function GrabImage(d) {
     else if (d[i] == "Africa") {imgNames.push("Af")}
     else if (d[i] == "North America") {imgNames.push("No")}
   }
-
   var img = imgNames.join('-')
   return "images/maps/map-" + img + ".jpg"
 }
@@ -203,6 +206,25 @@ $(document).ready(function(){
     $('#myDropdown3').append(option)
   }
 
+  tracker.forEach(function(d){    
+    for (var i = 0; i < d.region.length; i++) {            
+      if (d.region[i].charAt(0) == " " ) {
+        // remove leading space, artifact from excel file
+        d.region[i] = d.region[i].substring(1,d.region[i].length);
+      }
+    }
+
+    for (var i = 0; i < d.partner.length; i++) {     
+
+      if (d.partner[i].charAt(0) == " " ) {
+        // remove leading space, artifact from excel file
+        d.partner[i] = d.partner[i].substring(1,d.partner[i].length);
+      }
+      // console.log()
+      d.partner[i] = capitalizeFirstLetter(d.partner[i]);
+    }
+  })
+
   //sort by alphabetical
   tracker = cardSort(tracker)
 
@@ -211,13 +233,9 @@ $(document).ready(function(){
     // add all minis to the DOM
     var mini = '<div class="card-mini"><div class="card-inner mini"><div class="card-inner-mini-text"><h1>' + tracker[i].company +'</h1><h3>' + tracker[i].sector + '</h3></div></div></div>';
     $("#main-container-inner-inner").append(mini);
+    
     $("#main-container-inner-inner").children().last().data(tracker[i]);
-
-   
   }
-
-
-  // console.log(tracker[4])
 
 
   /////////// Jquery interaction functions ////////////
@@ -248,12 +266,9 @@ $(document).ready(function(){
   // $(".dropdown-content").on("click",".option",function(e){
     e.stopPropagation();
 
-    // console.log(this)
-
     var t0 = performance.now();
 
     // Add/remove items from filter array
-    // console.log(this)
 
   // figure out which group was selected from
     var nowList;
@@ -297,6 +312,7 @@ $(document).ready(function(){
     // $(this).parent().remove()
     var item = $(this).parent().children(":eq(1)")[0].innerHTML;
     var type = $(this).parent().children(":eq(0)")[0].innerHTML.slice(0, -2);
+
     var nowList = filters[type.toLowerCase()]
 
     // change the filters array
@@ -378,7 +394,7 @@ $(document).ready(function(){
       $(".card-large").remove()
       // get the data from this mini card  that was selected... add it to the large card. 
 
-      var places = mapSort($(this).data().region);
+      var places = JSON.parse(JSON.stringify(mapSort($(this).data().region)));
 
       var large = {"mapImg": GrabImage(places),
         "region": MultiplesString(places),
@@ -386,10 +402,10 @@ $(document).ready(function(){
         "sector": $(this).data().sector,
         "sector2": $(this).data().sector2,
         "description": $(this).data().description,
-        "partner": MultiplesString($(this).data().partner),
+        "partner": MultiplesString(JSON.parse(JSON.stringify($(this).data().partner))),
         "year": $(this).data().year
       }
-
+      
       if (large.region == "Global") {
         large.region = "around the world"
       } else {
@@ -423,7 +439,7 @@ $(document).ready(function(){
       
       // "show" the large card
       $(".card-large").show();
-
+      
   })
 
   $( window ).resize(function() {

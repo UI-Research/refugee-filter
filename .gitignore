@@ -6,3 +6,8 @@
 .sass-cache
 todo.xlsx
 legacy/
+*.cpg
+*.dbf
+*.prj
+*.shp
+*.shx
