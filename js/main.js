@@ -27,6 +27,8 @@ preload([
   'images/maps/map-Af.jpg',
   'images/maps/map-As.jpg',
   'images/maps/map-Eu.jpg',
+  'images/maps/map-Eu-Mi.jpg',
+  'images/maps/map-Eu-No.jpg',
   'images/maps/map-Gl.jpg',
   'images/maps/map-Mi.jpg',
   'images/maps/map-No.jpg'
