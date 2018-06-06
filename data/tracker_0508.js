@@ -633,7 +633,7 @@ var tracker = [
     " Asia"
   ],
   "partner": [
-    "United Nations High Commissioner for Refugees"
+    "international nonprofits"
   ],
   "partner2": "United Nations High Commissioner for Refugees",
   "year": ""

@@ -1,6 +1,6 @@
 var sector = ["Energy","Consulting","Manufacturing","Technology","Services","Education","Finance","Health","Other"];
 var region = ["Global","Asia","Europe","Africa","North America","the Middle East"];
-var partner = ["United Nations High Commissioner for Refugees","International nonprofits","Government agencies","Refugee-owned businesses","Multiple partners","Private-sector organizations","Local nonprofits"]
+var partner = ["United Nations High Commissioner for Refugees","United Nations Development Programme","International nonprofits","Government agencies","Refugee-owned businesses","Multiple partners","Private-sector organizations","Local nonprofits"]
 var filters = {
   "sector":[],
   "region":[],
