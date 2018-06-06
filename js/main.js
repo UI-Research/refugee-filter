@@ -86,6 +86,26 @@ function MultiplesString(d) {
   }
 }
 
+function MultiplesStringPartner(d) {
+  for (var i = 0; i < d.length; i++) {
+    if (i > 0) {
+      if (d[i] !== "United Nations High Commissioner for Refugees") {
+        d[i] =  d[i].toLowerCase()
+      }
+    }
+  }
+  if (d.length == 1) {
+    return d[0];
+  } 
+  else if (d.length === 2) {    
+    return d[0] + " and " + d[1];
+  }
+  else if (d.length >= 3) {    
+    var dd = d.pop()
+    return d.join(', ') + ", and " + dd;
+  }
+}
+
 function cardSort(data) {
     var sortedArray = data.sort(function (a, b) {
           if (a.company < b.company) return -1;
@@ -221,8 +241,7 @@ $(document).ready(function(){
       if (d.partner[i].charAt(0) == " " ) {
         // remove leading space, artifact from excel file
         d.partner[i] = d.partner[i].substring(1,d.partner[i].length);
-      }
-      // console.log()
+      }      
       d.partner[i] = capitalizeFirstLetter(d.partner[i]);
     }
   })
@@ -404,7 +423,7 @@ $(document).ready(function(){
         "sector": $(this).data().sector,
         "sector2": $(this).data().sector2,
         "description": $(this).data().description,
-        "partner": MultiplesString(JSON.parse(JSON.stringify($(this).data().partner))),
+        "partner": MultiplesStringPartner(JSON.parse(JSON.stringify($(this).data().partner))),
         "year": $(this).data().year
       }
       

@@ -494,7 +494,7 @@ var tracker = [
 },
 {
   "company": "HBO",
-  "description": "HBO, in association with the International Rescue Committee, founded the Rescue Has No Boundaries campaign, which uses actors from its shows to raise awareness for refugees. To date, the campaign has raised over $300,000 for service providers and has greatly increased awareness of the issue around the world. ",
+  "description": "HBO, in association with the International Rescue Committee, founded the Rescue Has No Boundaries campaign, which uses actors from HBO shows to raise awareness of refugee situations. To date, the campaign has raised over $300,000 for service providers.",
   "sector": "Other",
   "sector2": "Communications",
   "region": [
